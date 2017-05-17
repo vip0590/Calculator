@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>e-ci Assignment</title>
+		<link rel="stylesheet" href="style.css">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+		<script src="app.js"></script>
+	</head>
+	<body>
+		<nav class="test navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Angular JS Calculator</a>
+				</div>
+			</div>
+		</nav>
+		<div class="text-center">
+			
+			<h1></h1>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<form name="myForm" ng-app="myCalc" ng-controller="calcController">			
+						<table align="center" id="calc">
+							<tr>
+								<td colspan=4><input id="out" name="output" ng-model="output" type="text" value={{output}}  disabled>
+								</td>
+							</tr>
+
+							<tr>
+								<td><button id="btn" type=button ng-click="reset()">C</button></td>
+								<td><button id="btn" type=button class="focus" ng-click='calculate("root")' ng-disabled="checkNum==false">√</button></td>
+								<td><button id="btn" type=button class="focus" ng-click='calculate("^")' ng-disabled="checkNum==false">^</button></td>
+								<td><button id="btn" type=button class="focus" ng-click='calculate("/")' ng-disabled="checkNum==false">/</button></td>
+							</tr>
+							<tr>
+								<td><button id="btn" type=button ng-click="press('7')">7</button></td>
+								<td><button id="btn" type=button ng-click="press('8')">8</button></td>
+								<td><button id="btn" type=button ng-click="press('9')">9</button></td>
+								<td><button id="btn" type=button class="focus" ng-click='calculate("*")' ng-disabled="checkNum==false">*</button></td>
+
+							</tr>
+							<tr>
+								<td><button id="btn" type=button ng-click="press('4')">4</button></td>
+								<td><button id="btn" type=button ng-click="press('5')">5</button></td>
+								<td><button id="btn" type=button ng-click="press('6')">6</button></td>
+								<td><button id="btn" type=button  class="focus" ng-click='calculate("-")' ng-disabled="checkNum==false">-</button></td>
+							</tr>
+							<tr>
+								<td><button id="btn" type=button ng-click="press('1')">1</button></td>
+								<td><button id="btn" type=button ng-click="press('2')">2</button></td>
+								<td><button id="btn" type=button ng-click="press('3')">3</button></td>
+								<td><button id="btn" type=button  class="focus" ng-click='calculate("+")' ng-disabled="checkNum==false">+</button></td>
+							</tr>
+							<tr>
+								<td><button id="btn" ng-click="press('0')" >0</button></td>
+								<td><button id="btn" ng-click="press('x')" >Del</button></td>
+								<td><button id="btn" type=button ng-click="press('.')">.</button></td>
+								<td><button id="btn" type=button  class="focus" ng-click="calculation()" ng-disabled="checkNum==false">=</button></td>
+							</tr>
+							<tr><td colspan="4"><span align="center" style="color:red">{{msg}}</span></td></tr>
+						</table>
+						
+					</form>
+				</div>
+			</div>
+		</div>
+
+
+	</body>
+
+</html>
